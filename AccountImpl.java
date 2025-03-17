@@ -61,7 +61,7 @@ public class AccountImpl implements Service{
             isXchange = true;
             System.out.println("Exchanged amount: " + amountToReil + " Riel");
         }
-        return balance;
+        return amountToReil;
     }
 
     @Override

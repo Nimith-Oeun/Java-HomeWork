@@ -21,7 +21,10 @@ public class Operation {
                         System.out.println("=".repeat(20));
                         System.out.println("Saving Account");
                         System.out.println("=".repeat(20));
-                        System.out.println("Yor current balance is: " + savingAccount.getBalance()+"$");
+                        System.out.println("Your current balance USD is: " + savingAccount.getBalance()+"$");
+                        if (savingAccount.getIsXchange()) {
+                            System.out.println("Your current balance KHR is: " + savingAccount.getAmountToReil());
+                        }
                         System.out.println("""
                                 1. Deposit
                                 2. Withdraw
@@ -42,12 +45,12 @@ public class Operation {
                                 new Scanner(System.in).nextLine();
                             }
                             case 3 -> {
-                                System.out.print("Exchange to Reil = ");
+                                System.out.print("Please input amount to Exchange  = ");
                                 savingAccount.exchangeToReil(new Scanner(System.in).nextDouble());
                                 new Scanner(System.in).nextLine();
                             }
                             case 4 -> {
-                                System.out.print("Exchange to Dolla = ");
+                                System.out.print("Please input amount to Exchange = ");
                                 savingAccount.exchangeToDollar(new Scanner(System.in).nextDouble());
                                 new Scanner(System.in).nextLine();
                             }
@@ -61,7 +64,10 @@ public class Operation {
                         System.out.println("=".repeat(20));
                         System.out.println(CreditAccount.getName());
                         System.out.println("=".repeat(20));
-                        System.out.println("Yor current balance is: " + CreditAccount.getBalance() + "$");
+                        System.out.println("Your current balance USD is: " + CreditAccount.getBalance() + "$");
+                        if (CreditAccount.getIsXchange()) {
+                            System.out.println("Your current balance KHR is: " + CreditAccount.getAmountToReil());
+                        }
                         System.out.println("""
                                 1. Deposit
                                 2. Withdraw
